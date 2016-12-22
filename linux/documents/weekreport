@@ -1,0 +1,35 @@
+kind: "List"
+apiVersion: "v1"
+items:
+- apiVersion: v1
+  kind: DeploymentConfig
+  metadata:
+    labels:
+      app: hazelcast
+    name: hazelcast-center
+  spec:
+    replicas: 1
+    template:
+      metadata:
+        labels:
+          app: hazelcast-center
+      spec:
+        containers:
+        - name: hazelcast-center
+          image: hazelcast/management-center:latest
+          ports:
+          - containerPort: 8080
+---
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: hazelcast-center
+    labels:
+      app: hazelcast-center
+  spec:
+    ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+    selector:
+      app: hazelcast-center

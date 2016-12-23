@@ -1,0 +1,37 @@
+web:
+  image: yeasy/simple-web:latest
+  environment:
+    SERVICE_80_NAME: http
+    SERVICE_NAME: web
+    SERVICE_TAGS: backend
+  ports:
+  - "80"
+
+#load balancer will automatically update the config using consul-template
+lb:
+  image: yeasy/nginx-consul-template:latest
+  hostname: lb
+  links:
+  - consulserver:consul
+  ports:
+  - "80:80"
+
+consulserver:
+  image: gliderlabs/consul-server:latest
+  hostname: consulserver
+  ports:
+  - "8300"
+  - "8400"
+  - "8500:8500"
+  - "53"
+  command: -data-dir /tmp/consul -bootstrap -client 0.0.0.0
+
+# listen on local docker sock to register the container with public ports to the consul service
+registrator:
+  image: gliderlabs/registrator:master
+  hostname: registrator
+  links:
+  - consulserver:consul
+  volumes:
+  - "/var/run/docker.sock:/tmp/docker.sock"
+  command: -internal consul://consul:8500

@@ -1,0 +1,12 @@
+fastdfs-storage:
+  image: hub.docker.vpclub.cn/vpclub/fastdfs-storage
+  container_name: fastdfs-storage
+  net: host
+  ports:
+    - 23000:23000
+    - 80:80
+  volumes:
+    - ./fdfs/group1:/etc/fdfs/
+    - ./nginx/conf:/usr/local/nginx/conf
+    - /data:/data
+

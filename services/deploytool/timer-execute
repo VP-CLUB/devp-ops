@@ -1,0 +1,33 @@
+# backMysql timer shell
+sudo vim /usr/sbin/bakmysql
+#add command
+#edit /usr/bin/bakmysql
+mysqldump -h"$(ifconfig eth0 | grep "inet addr" | cut -d ':' -f 2 | cut -d ' ' -f 1)" -uroot -p"@vpclubdev" --all-databases > /data/mysql/vpclub-"$(ifconfig eth0 | grep "inet addr" | cut -d ':' -f 2 | cut -d ' ' -f 1)"-"$(date +%Y-%m-%d_%H%M%S)".sql
+echo "backup success!"
+
+## grant privileges
+chmod +x /usr/sbin/bakmysql
+
+#add time line
+sudo vim /etc/crontab 
+#add line 
+40 1 * * * root sudo /usr/sbin/bakmysql
+
+
+#################################################
+## restart elk  timer shell
+sudo vim /usr/sbin/elkrestart
+
+#add command
+#edit /usr/bin/bakmysql
+cd /home/vpclub/deployment/docker-elk
+sudo docker-compose restart
+echo "elk restart success!"
+
+## grant privileges
+chmod +x /usr/sbin/elkrestart
+
+#add time line
+sudo vim /etc/crontab 
+#add line 
+40 14 * * * root sudo /usr/sbin/elkrestart

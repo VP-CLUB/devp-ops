@@ -1,0 +1,23 @@
+{
+  "checks": [
+    {
+      "id": "chk1",
+      "name": "mem",
+      "script": "/bin/check_mem",
+      "interval": "5s"
+    },
+    {
+      "id": "chk2",
+      "name": "/health",
+      "http": "http://localhost:5000/health",
+      "interval": "15s"
+    },
+    {
+      "id": "chk3",
+      "name": "cpu",
+      "script": "/bin/check_cpu",
+      "interval": "10s"
+    },
+    ...
+  ]
+}

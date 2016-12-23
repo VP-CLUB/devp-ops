@@ -1,0 +1,8 @@
+monitor:
+  image: hub.docker.vpclub.cn/vpclub/monitor:latest
+  container_name: monitor
+  ports:
+    - 8080:8080
+  volumes:
+   - ./monitorConf:/dubbo/monitor-simple/conf
+

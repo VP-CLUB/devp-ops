@@ -1,0 +1,28 @@
+# application properties
+
+server:
+  port: 9990
+shell:
+  ssh:
+    port: 32210
+  auth:
+    simple:
+      user:
+        name: vpclub
+        password: 5pC1ub
+spring:
+  dubbo:
+    protocol:
+      name: dubbo
+      port: 22210
+      accesslog: true
+
+    provider:
+      timeout: 3000
+      retries: 1
+      delay: -1
+
+    registry:
+      address: zookeeper://10.46.125.195:2181
+      register: true
+      subscribe: true

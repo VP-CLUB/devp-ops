@@ -1,0 +1,13 @@
+＃ｓｏｌｖｅ　bad subtistition
+dpkg-reconfigure dash
+no
+
+plugin -install mobz/elasticsearch-head
+
+plugin -install medcl/elasticsearch-analysis-ik/1.1.0
+
+./plugin install lukas-vlcek/bigdesk
+
+
+tail -f -n 100 logs/jdbc.log
+

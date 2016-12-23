@@ -1,0 +1,17 @@
+elasticsearch:
+  image: elasticsearch:1.7.5
+  net: host
+  container_name: elasticsearch
+  ports:
+   - 9200:9200
+   - 9300:9300
+  volumes:
+   - ./data:/usr/share/elasticsearch/data
+   - ./config:/usr/share/elasticsearch/config
+# environment:
+#    HOSTNAME: vpclub
+
+#  extra_hosts:
+#    vpclub: 172.16.45.4
+  command: /usr/share/elasticsearch/bin/elasticsearch  -Des.cluster.name=vpclub-search-server -Des.node.master=true -Des.node.name=node1
+ 

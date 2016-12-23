@@ -1,0 +1,19 @@
+consulserver:
+  image: gliderlabs/consul-server:latest
+  hostname: consulserver
+  ports:
+  - "8300:8300"
+  - "8400:8400"
+  - "8500:8500"
+  - "53"
+  command: -data-dir /tmp/consul -bootstrap -client 0.0.0.0
+
+# listen on local docker sock to register the container with public ports to the consul service
+registrator:
+  image: gliderlabs/registrator:master
+  hostname: registrator
+  links:
+  - consulserver:consul
+  volumes:
+  - "/var/run/docker.sock:/tmp/docker.sock"
+  command: -internal consul://consul:8500

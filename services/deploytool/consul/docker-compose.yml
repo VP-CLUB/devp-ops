@@ -1,0 +1,47 @@
+version: "2"
+
+services:
+  consul:
+    container_name: consul
+    command: -server -bootstrap-expect 1 -domain example.com -advertise 172.16.0.63 -dc datacenter1 -recursor 8.8.8.8 -ui-dir /ui -data-dir /data/consul -encrypt "robin"
+    network_mode: host
+    ports:
+     - "8300:8300"
+     - "8400:8400"
+     - "8500:8500"
+     - "8600:53/udp"  
+    image: progrium/consul:latest
+    restart: always
+
+  nginx:
+    container_name: nginx
+    image: nginx:1.8.1-alpine
+    network_mode: host
+    restart: always
+    volumes:
+      - /etc/nginx/
+      - /nginx-ssl:/etc/nginx/ssl
+
+  consul-template:
+    container_name: consul-template
+    command: -consul=localhost:8500 -wait=5s -template="/etc/ctmpl/nginx.ctmpl:/etc/nginx/nginx.conf:docker kill -s HUP nginx"
+    image: alterway/consul-template-nginx:0.12-dockerinside-1.10
+    network_mode: host
+    restart: always
+    volumes_from:
+      - nginx
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      DOMAIN: 'example.com'
+      NGINX_SSL_CERT_PATH: '/etc/nginx/ssl/cert.pem'
+      NGINX_SSL_KEY_PATH: '/etc/nginx/ssl/key.pem'
+
+  registrator:
+    container_name: 'registrator'
+    image: gliderlabs/registrator
+    command: -ip 172.16.0.63 consul://localhost:8500
+    network_mode: host
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock

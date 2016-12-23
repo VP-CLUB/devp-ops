@@ -1,0 +1,38 @@
+# application properties
+
+server:
+  port: 9990
+
+spring:
+  dubbo:
+    basePackages: cn.vpclub.monitor.consumer
+
+    application:
+      name: vp-monitor-consumer
+      owner: vpclub
+
+    protocol:
+      name: dubbo
+      port: 22210
+      accesslog: true
+
+    provider:
+      timeout: 3000
+      retries: 1
+      delay: -1
+
+    registry:
+      address: zookeeper://172.16.5.34:2181?backup=172.16.5.34:2182,172.16.5.34:2183
+      register: true
+      subscribe: true
+# timer service properties
+
+location:
+      domain: http://test.h5.coupon.vpclub.cn
+      proports: "9790 9160 9400 9930 9970 9640 9100 9220 9340 9910 9600 9460 9280 9520 9525"
+      conports: "9190 9430 9870 9980 9940 9370 9310 9130 9250 9670 9610 9550 9490 9960 9555"
+
+timer:
+  service:
+    # health check-cron
+    healthStatCron: "0 0/5 * * * ?"

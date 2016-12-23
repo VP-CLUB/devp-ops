@@ -1,0 +1,53 @@
+input {
+	tcp {
+		port => 5000
+                type => "java-err"
+	}
+}
+
+filter {
+   if [type] == "java-err" {
+    grok {
+       match => { "message" => "%{TIMESTAMP_ISO8601:date} \[(?<thread_name>.+?)\]-\[(?<log_level>\w+)\]\s*(?<content>.*)"}
+    }
+    mutate {
+       remove_field => "content"
+    }
+    if [log_level] == "ERROR" {
+           throttle {
+                after_count => 2
+                key => "%{content}"
+                add_tag => "throttled"
+           }
+    }
+    if [log_level] != "ERROR" {
+          drop {}
+    }
+   }
+}
+
+## Add your filters here
+output {
+   elasticsearch {
+    hosts => "elasticsearch:9200"
+    protocol => "http"
+    index => "java-err-%{+YYYY.MM.dd}"
+   }
+   if "throttled" not in [tags] and [type] == "java-err" and [log_level] == "ERROR" 
+   email {
+        body => "%{message}"
+        from => "waj_615@qq.com"
+        contenttype => "text/plain; charset=UTF-8"
+        options => [
+                "smtpIporHost", "smtp.qq.com",
+                "userName", "waj_615@qq.com",
+                "password", "wan123",
+                "authenticationType", "login"
+        ]
+        subject => "服务器%{host} %{type}日志异常"
+        to => "chen.wei@vpclub.cn"
+   }
+   }
+}
+
+

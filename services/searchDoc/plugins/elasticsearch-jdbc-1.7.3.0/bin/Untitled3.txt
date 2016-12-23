@@ -1,0 +1,24 @@
+http://localhost:9200/zhtest/fulltext/_mapping
+
+
+{
+  "fulltext": {
+    "_all": {
+      "analyzer": "ik",
+      "search_analyzer": "ik",
+      "term_vector": "no",
+      "store": "false"
+    },
+    "properties": {
+      "content": {
+        "type": "string",
+        "store": "no",
+        "term_vector": "with_positions_offsets",
+        "analyzer": "ik",
+        "search_analyzer": "ik",
+        "include_in_all": "true",
+        "boost": 8
+      }
+    }
+  }
+}

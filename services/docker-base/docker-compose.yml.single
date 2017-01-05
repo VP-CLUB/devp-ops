@@ -1,0 +1,28 @@
+redis:
+  image: hub.docker.vpclub.cn/vpclub/redis:latest
+  container_name: redis
+  ports:
+    - 6379:6379
+  environment:
+    REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /data
+  volumes:
+    - ./data/redis:/data
+  command: redis-server --appendonly yes
+mysql:
+  image: hub.docker.vpclub.cn/vpclub/mysql:latest
+  container_name: mysql
+  ports:
+    - 3306:3306
+  environment:
+    MYSQL_ROOT_PASSWORD: "@vpclubdev"
+  volumes:
+    - ./data/mysql:/var/lib/mysql
+
+mongodb:
+  image: hub.docker.vpclub.cn/vpclub/mongodb:latest
+  container_name: mongodb 
+  ports:
+    - 27017:27017
+    - 28017:28017
+  volumes:
+    - ./data/mongodb:/data/db

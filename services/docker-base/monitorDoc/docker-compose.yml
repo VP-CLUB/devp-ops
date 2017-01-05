@@ -1,0 +1,6 @@
+monitor:
+  image: hub.docker.vpclub.cn/vpclub/monitor:latest
+  container_name: monitor
+  net: host
+  volumes:
+   - ./conf:/dubbo/monitor-simple/conf

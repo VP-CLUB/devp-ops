@@ -1,0 +1,7 @@
+nginx:
+  image: hub.docker.vpclub.cn/vpclub/nginx
+  net: host
+  ports:
+    - 80:80
+  volumes:
+    - ./work/conf:/etc/nginx:ro

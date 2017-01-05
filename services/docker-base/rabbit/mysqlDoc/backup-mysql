@@ -1,0 +1,11 @@
+#timer shell
+sudo vim /usr/sbin/bakmysql
+#add command
+
+
+chmod +x /usr/sbin/bakmysql
+
+sudo vim /etc/crontab 
+#add line 
+40 1 * * * root sudo /usr/sbin/bakmysql
+

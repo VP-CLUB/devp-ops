@@ -1,0 +1,109 @@
+mysql:
+  image: hub.docker.vpclub.cn/vpclub/mysql:latest
+  container_name: mysql
+  net: host
+  ports:
+    - 3306:3306
+  environment:
+    MYSQL_ROOT_PASSWORD: "@vpclubdev"
+  volumes:
+    - /docker-init/mysqlConf:/etc/mysql/conf.d
+    - /data/mysql:/var/lib/mysql
+  
+mongodb:
+  image: hub.docker.vpclub.cn/vpclub/mongodb:latest
+  container_name: mongodb 
+  ports:
+    - 27017:27017
+    - 28017:28017
+  volumes:
+    - /data/mongodb:/data/db
+#redis-cluster
+redis-master:
+  image: hub.docker.vpclub.cn/vpclub/redis:latest
+  container_name: redis-master
+  volumes:
+    - ./data/redis/master:/data
+  ports:
+    - 6379:6379
+
+redis-slave1:
+  image: hub.docker.vpclub.cn/vpclub/redis:latest
+  container_name: redis-slave1
+  volumes:
+    - ./redis-conf/6380:/usr/local/etc/redis/
+    - ./data/redis/slave1:/data
+  command: redis-server /usr/local/etc/redis/redis.conf --appendonly yes
+  ports:
+    - 6380:6379
+  links:
+    - redis-master
+redis-slave2:
+  image: hub.docker.vpclub.cn/vpclub/redis:latest
+  container_name: redis-slave2
+  volumes:
+    - ./redis-conf/6381:/usr/local/etc/redis/
+    - ./data/redis/slave2:/data
+  command: redis-server /usr/local/etc/redis/redis.conf --appendonly yes
+  ports:
+    - 6381:6379
+  links:
+    - redis-master
+#redis-slave3:
+#  image: hub.docker.vpclub.cn/vpclub/redis:latest
+#  container_name: redis-slave3
+#  volumes:
+#    - ./redis-conf/6382:/usr/local/etc/redis/
+#  - ./data/redis/slave3:/data
+#  command: redis-server /usr/local/etc/redis/redis.conf --appendonly yes
+#  ports:
+#    - 6382:6379
+#  links:
+#    - redis-master
+#zookeeper
+zk1:
+  image: hub.docker.vpclub.cn/vpclub/zookeeper 
+  container_name: zk1
+  net: host 
+#  ports:
+#    - 2181:2181
+  environment:
+   - SERVER_ID=1
+   - ADDITIONAL_ZOOKEEPER_1=server.1=localhost:2888:3888
+   - ADDITIONAL_ZOOKEEPER_2=server.2=localhost:2889:3889
+   - ADDITIONAL_ZOOKEEPER_3=server.3=localhost:2890:3890
+   - ADDITIONAL_ZOOKEEPER_4=clientPort=2181
+zk2:
+  image: hub.docker.vpclub.cn/vpclub/zookeeper
+  container_name: zk2
+  net: host
+#  ports:
+#    - 2181:2181
+  environment:
+   - SERVER_ID=2
+   - ADDITIONAL_ZOOKEEPER_1=server.1=localhost:2888:3888
+   - ADDITIONAL_ZOOKEEPER_2=server.2=localhost:2889:3889
+   - ADDITIONAL_ZOOKEEPER_3=server.3=localhost:2890:3890
+   - ADDITIONAL_ZOOKEEPER_4=clientPort=2182
+zk3:
+  image: hub.docker.vpclub.cn/vpclub/zookeeper
+  container_name: zk3
+  net: host
+#  ports:
+#    - 2181:2181
+  environment:
+   - SERVER_ID=3
+   - ADDITIONAL_ZOOKEEPER_1=server.1=localhost:2888:3888
+   - ADDITIONAL_ZOOKEEPER_2=server.2=localhost:2889:3889
+   - ADDITIONAL_ZOOKEEPER_3=server.3=localhost:2890:3890
+   - ADDITIONAL_ZOOKEEPER_4=clientPort=2183
+#monitor
+#monitor:
+#  image: hub.docker.vpclub.cn/vpclub/monitor:latest
+#  container_name: monitor
+#  ports:
+#    - 8080:8080
+#  links: 
+#    - zk1
+#  volumes:
+#   - ./conf:/dubbo/monitor-simple/conf

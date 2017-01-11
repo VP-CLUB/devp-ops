@@ -1,0 +1,14 @@
+sonarqube:
+   image: sonarqube
+   container_name: sonarqube
+   ports:
+     - 9000:9000
+     - 9092:9092
+   volumes:
+     - ./extensions/plugins/:/opt/sonarqube/extensions/plugins/
+   environment:
+     TZ: Asia/Shanghai
+     SONARQUBE_JDBC_USERNAME: root
+     SONARQUBE_JDBC_PASSWORD: '@vpclubdev'
+     SONARQUBE_JDBC_URL: 'jdbc:mysql://172.16.45.3:3306/sonar?useUnicode=true&characterEncoding=utf8'
+

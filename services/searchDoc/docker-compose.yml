@@ -1,5 +1,5 @@
 elasticsearch:
-  image: hub.docker.vpclub.cn/vpclub/elasticsearch:1.7.5
+  image: vpclub/elasticsearch
   net: host
   container_name: elasticsearch
   ports:

@@ -15,7 +15,7 @@ If RQ = vbYes Then
   ' Open & Create Excel Document 
   Dim x1 ' 
   Set x1 = CreateObject("Excel.Application") 
-  x1.Workbooks.Open "C:\Users\Administrator\workspace\moses\documents\design\merchants\signContract.xlsx" 
+  x1.Workbooks.Open "C:\Users\Administrator\workspace\moses\documents\design\merchants\merchant_contract.xlsx" 
   x1.Workbooks(1).Worksheets("Sheet1").Activate 
 Else 
   HaveExcel = False 
@@ -32,7 +32,7 @@ dim col
 dim count
 
 'on error Resume Next 
-For rwIndex = 1 To 62 step 1 
+For rwIndex = 1 To 66 step 1 
       With x1.Workbooks(1).Worksheets("Sheet1") 
       'MsgBox "生成数据表结构共计 1 ="+CStr(.Cells(2,2).Value ), vbOK + vbInformation, "表" 
       If .Cells(rwIndex, 1).Value = "" Then 
@@ -41,7 +41,8 @@ For rwIndex = 1 To 62 step 1
       If .Cells(rwIndex, 3).Value = "" Then 
          set table = mdl.Tables.CreateNew 
          table.Name = .Cells(rwIndex , 1).Value 
-         table.Code = .Cells(rwIndex , 2).Value 
+         table.Code = .Cells(rwIndex , 1).Value
+         table.Comment = .Cells(rwIndex , 2).Value
          count = count + 1 
       Else 
          colName = .Cells(rwIndex, 1).Value 

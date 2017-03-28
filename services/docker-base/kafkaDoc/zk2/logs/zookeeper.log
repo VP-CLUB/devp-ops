@@ -3718,3 +3718,142 @@ EndOfStreamException: Unable to read additional data from client sessionid 0x359
 2016-12-30 16:56:26,780 [myid:2] - INFO  [CommitProcessor:2:ZooKeeperServer@617] - Established session 0x2594ae8944f0000 with negotiated timeout 6000 for client /10.1.13.2:51708
 2016-12-30 16:56:27,778 [myid:2] - INFO  [ProcessThread(sid:2 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x2594ae8944f0000 type:create cxid:0x3 zxid:0x50000006d txntype:-1 reqpath:n/a Error Path:/brokers Error:KeeperErrorCode = NodeExists for /brokers
 2016-12-30 16:56:27,778 [myid:2] - INFO  [ProcessThread(sid:2 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x2594ae8944f0000 type:create cxid:0x4 zxid:0x50000006e txntype:-1 reqpath:n/a Error Path:/brokers/ids Error:KeeperErrorCode = NodeExists for /brokers/ids
+2017-03-16 10:44:26,208 [myid:] - INFO  [main:QuorumPeerConfig@103] - Reading configuration from: /opt/zookeeper/bin/../conf/zoo.cfg
+2017-03-16 10:44:26,329 [myid:] - INFO  [main:QuorumPeerConfig@340] - Defaulting to majority quorums
+2017-03-16 10:44:26,353 [myid:2] - INFO  [main:DatadirCleanupManager@78] - autopurge.snapRetainCount set to 3
+2017-03-16 10:44:26,354 [myid:2] - INFO  [main:DatadirCleanupManager@79] - autopurge.purgeInterval set to 0
+2017-03-16 10:44:26,354 [myid:2] - INFO  [main:DatadirCleanupManager@101] - Purge task is not scheduled.
+2017-03-16 10:44:26,389 [myid:2] - INFO  [main:QuorumPeerMain@127] - Starting quorum peer
+2017-03-16 10:44:26,840 [myid:2] - INFO  [main:NIOServerCnxnFactory@94] - binding to port 0.0.0.0/0.0.0.0:2182
+2017-03-16 10:44:26,977 [myid:2] - INFO  [main:QuorumPeer@959] - tickTime set to 2000
+2017-03-16 10:44:26,977 [myid:2] - INFO  [main:QuorumPeer@979] - minSessionTimeout set to -1
+2017-03-16 10:44:26,977 [myid:2] - INFO  [main:QuorumPeer@990] - maxSessionTimeout set to -1
+2017-03-16 10:44:26,977 [myid:2] - INFO  [main:QuorumPeer@1005] - initLimit set to 10
+2017-03-16 10:44:27,063 [myid:2] - INFO  [main:QuorumPeer@473] - currentEpoch not found! Creating with a reasonable default of 0. This should only happen when you are upgrading your installation
+2017-03-16 10:44:27,147 [myid:2] - INFO  [main:QuorumPeer@488] - acceptedEpoch not found! Creating with a reasonable default of 0. This should only happen when you are upgrading your installation
+2017-03-16 10:44:27,281 [myid:2] - INFO  [Thread-1:QuorumCnxManager$Listener@504] - My election bind port: localhost/127.0.0.1:3889
+2017-03-16 10:44:27,298 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:QuorumPeer@714] - LOOKING
+2017-03-16 10:44:27,299 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:FastLeaderElection@815] - New election. My id =  2, proposed zxid=0x0
+2017-03-16 10:44:27,334 [myid:2] - INFO  [localhost/127.0.0.1:3889:QuorumCnxManager$Listener@511] - Received connection request /127.0.0.1:45818
+2017-03-16 10:44:27,352 [myid:2] - INFO  [localhost/127.0.0.1:3889:QuorumCnxManager$Listener@511] - Received connection request /127.0.0.1:45826
+2017-03-16 10:44:27,353 [myid:2] - INFO  [WorkerReceiver[myid=2]:FastLeaderElection@597] - Notification: 1 (message format version), 3 (n.leader), 0x0 (n.zxid), 0x1 (n.round), LOOKING (n.state), 1 (n.sid), 0x0 (n.peerEpoch) LOOKING (my state)
+2017-03-16 10:44:27,353 [myid:2] - INFO  [WorkerReceiver[myid=2]:FastLeaderElection@597] - Notification: 1 (message format version), 2 (n.leader), 0x0 (n.zxid), 0x1 (n.round), LOOKING (n.state), 2 (n.sid), 0x0 (n.peerEpoch) LOOKING (my state)
+2017-03-16 10:44:27,353 [myid:2] - INFO  [WorkerReceiver[myid=2]:FastLeaderElection@597] - Notification: 1 (message format version), 3 (n.leader), 0x0 (n.zxid), 0x1 (n.round), LOOKING (n.state), 3 (n.sid), 0x0 (n.peerEpoch) LOOKING (my state)
+2017-03-16 10:44:27,353 [myid:2] - INFO  [WorkerReceiver[myid=2]:FastLeaderElection@597] - Notification: 1 (message format version), 3 (n.leader), 0x0 (n.zxid), 0x1 (n.round), LOOKING (n.state), 2 (n.sid), 0x0 (n.peerEpoch) LOOKING (my state)
+2017-03-16 10:44:27,554 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:QuorumPeer@784] - FOLLOWING
+2017-03-16 10:44:27,570 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Learner@86] - TCP NoDelay set to: true
+2017-03-16 10:44:27,676 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+2017-03-16 10:44:27,676 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:host.name=k8s-minion3
+2017-03-16 10:44:27,676 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:java.version=1.7.0_111
+2017-03-16 10:44:27,676 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:java.vendor=Oracle Corporation
+2017-03-16 10:44:27,676 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:java.home=/usr/lib/jvm/java-7-openjdk-amd64/jre
+2017-03-16 10:44:27,676 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:java.class.path=/opt/zookeeper/bin/../build/classes:/opt/zookeeper/bin/../build/lib/*.jar:/opt/zookeeper/bin/../lib/slf4j-log4j12-1.6.1.jar:/opt/zookeeper/bin/../lib/slf4j-api-1.6.1.jar:/opt/zookeeper/bin/../lib/netty-3.7.0.Final.jar:/opt/zookeeper/bin/../lib/log4j-1.2.16.jar:/opt/zookeeper/bin/../lib/jline-0.9.94.jar:/opt/zookeeper/bin/../zookeeper-3.4.6.jar:/opt/zookeeper/bin/../src/java/lib/*.jar:/opt/zookeeper/bin/../conf:
+2017-03-16 10:44:27,677 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+2017-03-16 10:44:27,677 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:java.io.tmpdir=/tmp
+2017-03-16 10:44:27,678 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:java.compiler=<NA>
+2017-03-16 10:44:27,678 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:os.name=Linux
+2017-03-16 10:44:27,678 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:os.arch=amd64
+2017-03-16 10:44:27,678 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:os.version=4.4.0-66-generic
+2017-03-16 10:44:27,678 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:user.name=root
+2017-03-16 10:44:27,678 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:user.home=/root
+2017-03-16 10:44:27,678 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:user.dir=/opt/zookeeper
+2017-03-16 10:44:27,679 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:ZooKeeperServer@162] - Created server with tickTime 2000 minSessionTimeout 4000 maxSessionTimeout 40000 datadir /tmp/zookeeper/version-2 snapdir /tmp/zookeeper/version-2
+2017-03-16 10:44:27,680 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Follower@63] - FOLLOWING - LEADER ELECTION TOOK - 381
+2017-03-16 10:44:27,804 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Learner@323] - Getting a diff from the leader 0x0
+2017-03-16 10:44:27,807 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:FileTxnSnapLog@240] - Snapshotting: 0x0 to /tmp/zookeeper/version-2/snapshot.0
+2017-03-16 10:44:30,206 [myid:2] - WARN  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Follower@118] - Got zxid 0x100000001 expected 0x1
+2017-03-16 10:44:30,206 [myid:2] - INFO  [SyncThread:2:FileTxnLog@199] - Creating new log file: log.100000001
+2017-03-16 12:41:44,281 [myid:] - INFO  [main:QuorumPeerConfig@103] - Reading configuration from: /opt/zookeeper/bin/../conf/zoo.cfg
+2017-03-16 12:41:44,284 [myid:] - INFO  [main:QuorumPeerConfig@340] - Defaulting to majority quorums
+2017-03-16 12:41:44,286 [myid:2] - INFO  [main:DatadirCleanupManager@78] - autopurge.snapRetainCount set to 3
+2017-03-16 12:41:44,286 [myid:2] - INFO  [main:DatadirCleanupManager@79] - autopurge.purgeInterval set to 0
+2017-03-16 12:41:44,287 [myid:2] - INFO  [main:DatadirCleanupManager@101] - Purge task is not scheduled.
+2017-03-16 12:41:44,294 [myid:2] - INFO  [main:QuorumPeerMain@127] - Starting quorum peer
+2017-03-16 12:41:44,301 [myid:2] - INFO  [main:NIOServerCnxnFactory@94] - binding to port 0.0.0.0/0.0.0.0:2182
+2017-03-16 12:41:44,315 [myid:2] - INFO  [main:QuorumPeer@959] - tickTime set to 2000
+2017-03-16 12:41:44,315 [myid:2] - INFO  [main:QuorumPeer@979] - minSessionTimeout set to -1
+2017-03-16 12:41:44,315 [myid:2] - INFO  [main:QuorumPeer@990] - maxSessionTimeout set to -1
+2017-03-16 12:41:44,315 [myid:2] - INFO  [main:QuorumPeer@1005] - initLimit set to 10
+2017-03-16 12:41:44,323 [myid:2] - INFO  [main:FileSnap@83] - Reading snapshot /tmp/zookeeper/version-2/snapshot.0
+2017-03-16 12:41:44,342 [myid:2] - INFO  [Thread-1:QuorumCnxManager$Listener@504] - My election bind port: localhost/127.0.0.1:3889
+2017-03-16 12:41:44,350 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:QuorumPeer@714] - LOOKING
+2017-03-16 12:41:44,351 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:FastLeaderElection@815] - New election. My id =  2, proposed zxid=0x100000055
+2017-03-16 12:41:44,356 [myid:2] - INFO  [WorkerReceiver[myid=2]:FastLeaderElection@597] - Notification: 1 (message format version), 2 (n.leader), 0x100000055 (n.zxid), 0x1 (n.round), LOOKING (n.state), 2 (n.sid), 0x1 (n.peerEpoch) LOOKING (my state)
+2017-03-16 12:41:44,357 [myid:2] - WARN  [WorkerSender[myid=2]:QuorumCnxManager@382] - Cannot open channel to 3 at election address localhost/127.0.0.1:3890
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at org.apache.zookeeper.server.quorum.QuorumCnxManager.connectOne(QuorumCnxManager.java:368)
+	at org.apache.zookeeper.server.quorum.QuorumCnxManager.toSend(QuorumCnxManager.java:341)
+	at org.apache.zookeeper.server.quorum.FastLeaderElection$Messenger$WorkerSender.process(FastLeaderElection.java:449)
+	at org.apache.zookeeper.server.quorum.FastLeaderElection$Messenger$WorkerSender.run(FastLeaderElection.java:430)
+	at java.lang.Thread.run(Thread.java:745)
+2017-03-16 12:41:44,358 [myid:2] - INFO  [WorkerReceiver[myid=2]:FastLeaderElection@597] - Notification: 1 (message format version), 1 (n.leader), 0x100000055 (n.zxid), 0x1 (n.round), LOOKING (n.state), 1 (n.sid), 0x1 (n.peerEpoch) LOOKING (my state)
+2017-03-16 12:41:44,359 [myid:2] - INFO  [WorkerReceiver[myid=2]:FastLeaderElection@597] - Notification: 1 (message format version), 2 (n.leader), 0x100000055 (n.zxid), 0x1 (n.round), LOOKING (n.state), 1 (n.sid), 0x1 (n.peerEpoch) LOOKING (my state)
+2017-03-16 12:41:44,560 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:QuorumPeer@796] - LEADING
+2017-03-16 12:41:44,563 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Leader@60] - TCP NoDelay set to: true
+2017-03-16 12:41:44,570 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+2017-03-16 12:41:44,570 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:host.name=k8s-minion3
+2017-03-16 12:41:44,570 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:java.version=1.7.0_111
+2017-03-16 12:41:44,570 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:java.vendor=Oracle Corporation
+2017-03-16 12:41:44,570 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:java.home=/usr/lib/jvm/java-7-openjdk-amd64/jre
+2017-03-16 12:41:44,571 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:java.class.path=/opt/zookeeper/bin/../build/classes:/opt/zookeeper/bin/../build/lib/*.jar:/opt/zookeeper/bin/../lib/slf4j-log4j12-1.6.1.jar:/opt/zookeeper/bin/../lib/slf4j-api-1.6.1.jar:/opt/zookeeper/bin/../lib/netty-3.7.0.Final.jar:/opt/zookeeper/bin/../lib/log4j-1.2.16.jar:/opt/zookeeper/bin/../lib/jline-0.9.94.jar:/opt/zookeeper/bin/../zookeeper-3.4.6.jar:/opt/zookeeper/bin/../src/java/lib/*.jar:/opt/zookeeper/bin/../conf:
+2017-03-16 12:41:44,571 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+2017-03-16 12:41:44,571 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:java.io.tmpdir=/tmp
+2017-03-16 12:41:44,571 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:java.compiler=<NA>
+2017-03-16 12:41:44,571 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:os.name=Linux
+2017-03-16 12:41:44,571 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:os.arch=amd64
+2017-03-16 12:41:44,571 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:os.version=4.4.0-66-generic
+2017-03-16 12:41:44,571 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:user.name=root
+2017-03-16 12:41:44,571 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:user.home=/root
+2017-03-16 12:41:44,571 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Environment@100] - Server environment:user.dir=/opt/zookeeper
+2017-03-16 12:41:44,572 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:ZooKeeperServer@162] - Created server with tickTime 2000 minSessionTimeout 4000 maxSessionTimeout 40000 datadir /tmp/zookeeper/version-2 snapdir /tmp/zookeeper/version-2
+2017-03-16 12:41:44,573 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Leader@358] - LEADING - LEADER ELECTION TOOK - 222
+2017-03-16 12:41:44,580 [myid:2] - INFO  [LearnerHandler-/127.0.0.1:60380:LearnerHandler@330] - Follower sid: 1 : info : org.apache.zookeeper.server.quorum.QuorumPeer$QuorumServer@7bb21521
+2017-03-16 12:41:44,649 [myid:2] - INFO  [LearnerHandler-/127.0.0.1:60380:LearnerHandler@385] - Synchronizing with Follower sid: 1 maxCommittedLog=0x100000055 minCommittedLog=0x100000001 peerLastZxid=0x100000055
+2017-03-16 12:41:44,650 [myid:2] - INFO  [LearnerHandler-/127.0.0.1:60380:LearnerHandler@462] - Sending DIFF
+2017-03-16 12:41:44,717 [myid:2] - INFO  [LearnerHandler-/127.0.0.1:60380:LearnerHandler@522] - Received NEWLEADER-ACK message from 1
+2017-03-16 12:41:44,719 [myid:2] - INFO  [QuorumPeer[myid=2]/0:0:0:0:0:0:0:0:2182:Leader@943] - Have quorum of supporters, sids: [ 1,2 ]; starting up and setting last processed zxid: 0x200000000
+2017-03-16 12:41:44,737 [myid:2] - INFO  [localhost/127.0.0.1:3889:QuorumCnxManager$Listener@511] - Received connection request /127.0.0.1:53362
+2017-03-16 12:41:44,738 [myid:2] - INFO  [WorkerReceiver[myid=2]:FastLeaderElection@597] - Notification: 1 (message format version), 3 (n.leader), 0x100000055 (n.zxid), 0x1 (n.round), LOOKING (n.state), 3 (n.sid), 0x1 (n.peerEpoch) LEADING (my state)
+2017-03-16 12:41:44,918 [myid:2] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2182:NIOServerCnxnFactory@197] - Accepted socket connection from /172.16.45.4:32940
+2017-03-16 12:41:44,921 [myid:2] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2182:ZooKeeperServer@861] - Client attempting to renew session 0x15ad6b8021f0002 at /172.16.45.4:32940
+2017-03-16 12:41:44,924 [myid:2] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2182:ZooKeeperServer@617] - Established session 0x15ad6b8021f0002 with negotiated timeout 6000 for client /172.16.45.4:32940
+2017-03-16 12:41:44,942 [myid:2] - INFO  [WorkerReceiver[myid=2]:FastLeaderElection@597] - Notification: 1 (message format version), 3 (n.leader), 0x100000055 (n.zxid), 0x1 (n.round), LOOKING (n.state), 3 (n.sid), 0x1 (n.peerEpoch) LEADING (my state)
+2017-03-16 12:41:44,953 [myid:2] - INFO  [LearnerHandler-/127.0.0.1:60386:LearnerHandler@330] - Follower sid: 3 : info : org.apache.zookeeper.server.quorum.QuorumPeer$QuorumServer@15dbadea
+2017-03-16 12:41:44,984 [myid:2] - INFO  [LearnerHandler-/127.0.0.1:60386:LearnerHandler@385] - Synchronizing with Follower sid: 3 maxCommittedLog=0x100000055 minCommittedLog=0x100000001 peerLastZxid=0x100000055
+2017-03-16 12:41:44,985 [myid:2] - INFO  [LearnerHandler-/127.0.0.1:60386:LearnerHandler@462] - Sending DIFF
+2017-03-16 12:41:45,018 [myid:2] - INFO  [LearnerHandler-/127.0.0.1:60386:LearnerHandler@522] - Received NEWLEADER-ACK message from 3
+2017-03-16 12:41:46,461 [myid:2] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2182:NIOServerCnxnFactory@197] - Accepted socket connection from /10.1.13.2:34194
+2017-03-16 12:41:46,463 [myid:2] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2182:ZooKeeperServer@868] - Client attempting to establish new session at /10.1.13.2:34194
+2017-03-16 12:41:46,464 [myid:2] - INFO  [SyncThread:2:FileTxnLog@199] - Creating new log file: log.200000001
+2017-03-16 12:41:46,537 [myid:2] - INFO  [CommitProcessor:2:ZooKeeperServer@617] - Established session 0x25ad72362100000 with negotiated timeout 6000 for client /10.1.13.2:34194
+2017-03-16 12:41:46,899 [myid:2] - INFO  [ProcessThread(sid:2 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x25ad72362100000 type:create cxid:0x1a zxid:0x200000002 txntype:-1 reqpath:n/a Error Path:/brokers Error:KeeperErrorCode = NodeExists for /brokers
+2017-03-16 12:41:46,900 [myid:2] - INFO  [ProcessThread(sid:2 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x25ad72362100000 type:create cxid:0x1b zxid:0x200000003 txntype:-1 reqpath:n/a Error Path:/brokers/ids Error:KeeperErrorCode = NodeExists for /brokers/ids
+2017-03-17 06:56:37,420 [myid:2] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2182:NIOServerCnxnFactory@197] - Accepted socket connection from /172.16.45.3:57504
+2017-03-17 06:56:37,496 [myid:2] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2182:ZooKeeperServer@868] - Client attempting to establish new session at /172.16.45.3:57504
+2017-03-17 06:56:37,890 [myid:2] - INFO  [CommitProcessor:2:ZooKeeperServer@617] - Established session 0x25ad72362100001 with negotiated timeout 6000 for client /172.16.45.3:57504
+2017-03-17 06:56:38,528 [myid:2] - INFO  [ProcessThread(sid:2 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x25ad72362100001 type:create cxid:0x1b zxid:0x200000009 txntype:-1 reqpath:n/a Error Path:/brokers Error:KeeperErrorCode = NodeExists for /brokers
+2017-03-17 06:56:38,528 [myid:2] - INFO  [ProcessThread(sid:2 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x25ad72362100001 type:create cxid:0x1c zxid:0x20000000a txntype:-1 reqpath:n/a Error Path:/brokers/ids Error:KeeperErrorCode = NodeExists for /brokers/ids
+2017-03-17 06:56:38,528 [myid:2] - INFO  [ProcessThread(sid:2 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x25ad72362100001 type:create cxid:0x1d zxid:0x20000000b txntype:-1 reqpath:n/a Error Path:/brokers/ids/1002 Error:KeeperErrorCode = NodeExists for /brokers/ids/1002
+2017-03-17 06:56:41,262 [myid:2] - INFO  [ProcessThread(sid:2 cport:-1)::PrepRequestProcessor@494] - Processed session termination for sessionid: 0x25ad72362100001
+2017-03-17 06:56:41,453 [myid:2] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2182:NIOServerCnxn@1007] - Closed socket connection for client /172.16.45.3:57504 which had sessionid 0x25ad72362100001
+2017-03-17 06:56:42,895 [myid:2] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2182:NIOServerCnxnFactory@197] - Accepted socket connection from /172.16.45.3:57522
+2017-03-17 06:56:42,941 [myid:2] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2182:ZooKeeperServer@868] - Client attempting to establish new session at /172.16.45.3:57522
+2017-03-17 06:56:42,983 [myid:2] - INFO  [CommitProcessor:2:ZooKeeperServer@617] - Established session 0x25ad72362100002 with negotiated timeout 6000 for client /172.16.45.3:57522
+2017-03-17 06:56:43,370 [myid:2] - INFO  [ProcessThread(sid:2 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x25ad72362100002 type:create cxid:0x1b zxid:0x20000000f txntype:-1 reqpath:n/a Error Path:/brokers Error:KeeperErrorCode = NodeExists for /brokers
+2017-03-17 06:56:43,370 [myid:2] - INFO  [ProcessThread(sid:2 cport:-1)::PrepRequestProcessor@645] - Got user-level KeeperException when processing sessionid:0x25ad72362100002 type:create cxid:0x1c zxid:0x200000010 txntype:-1 reqpath:n/a Error Path:/brokers/ids Error:KeeperErrorCode = NodeExists for /brokers/ids
+2017-03-17 06:56:46,057 [myid:2] - INFO  [SessionTracker:ZooKeeperServer@347] - Expiring session 0x15ad72361cd0000, timeout of 6000ms exceeded
+2017-03-17 06:56:46,061 [myid:2] - INFO  [ProcessThread(sid:2 cport:-1)::PrepRequestProcessor@494] - Processed session termination for sessionid: 0x15ad72361cd0000
+2017-03-17 06:58:08,963 [myid:2] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2182:NIOServerCnxn@357] - caught end of stream exception
+EndOfStreamException: Unable to read additional data from client sessionid 0x25ad72362100002, likely client has closed socket
+	at org.apache.zookeeper.server.NIOServerCnxn.doIO(NIOServerCnxn.java:228)
+	at org.apache.zookeeper.server.NIOServerCnxnFactory.run(NIOServerCnxnFactory.java:208)
+	at java.lang.Thread.run(Thread.java:745)
+2017-03-17 06:58:08,963 [myid:2] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2182:NIOServerCnxn@1007] - Closed socket connection for client /172.16.45.3:57522 which had sessionid 0x25ad72362100002
+2017-03-17 06:58:16,000 [myid:2] - INFO  [SessionTracker:ZooKeeperServer@347] - Expiring session 0x25ad72362100002, timeout of 6000ms exceeded
+2017-03-17 06:58:16,000 [myid:2] - INFO  [ProcessThread(sid:2 cport:-1)::PrepRequestProcessor@494] - Processed session termination for sessionid: 0x25ad72362100002

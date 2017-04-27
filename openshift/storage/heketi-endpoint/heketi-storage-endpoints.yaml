@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: heketi-storage-endpoints
+  resourceVersion: "822805"
+subsets:
+- addresses:
+  - ip: 192.168.0.20
+  - ip: 192.168.0.21
+  - ip: 192.168.0.22
+  ports:
+  - port: 1
+    protocol: TCP

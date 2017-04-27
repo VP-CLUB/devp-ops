@@ -12,9 +12,9 @@ spec:
         name: router-daemonset
     spec:
       nodeSelector: 
-        zone: szo
+        zone: south-cn-a
       containers:
-      - image: docker-registry-default.172.16.5.80.nip.io/openshift/router:1.0.0
+      - image: vpclub/router:1.0.0
         imagePullPolicy: Always
         name: router-daemonset
         resources: {}

@@ -1,0 +1,11 @@
+project-name:
+  image: vpclub/java:8
+  working_dir: /app
+  net: host
+  volumes:
+    - ./app:/app
+
+  command: java -Xmx128m -Xss256k -jar /app/project-name.jar --spring.profiles.active=dev
+
+  ports:
+    - 8081:8081

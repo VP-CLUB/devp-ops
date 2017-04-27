@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: heketi-storage-endpoints
+  resourceVersion: "822807"
+spec:
+  ports:
+  - port: 1
+    protocol: TCP
+    targetPort: 1
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

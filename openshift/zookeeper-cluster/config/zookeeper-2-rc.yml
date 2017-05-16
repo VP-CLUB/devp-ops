@@ -1,14 +1,26 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: zookeeper-1
+  name: zookeeper-2
 spec:
   replicas: 1
+  triggers:
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+        - server-2
+        from:
+          kind: ImageStreamTag
+          name: "zookeeper:v10"
+          namespace: openshift
+        lastTriggeredImage: ""
+      type: ImageChange
+    - type: ConfigChange
   template:
     metadata:
       labels:
         app: zookeeper
-        server-id: "1"
+        server-id: "2"
     spec:
       volumes:
         - name: data
@@ -18,10 +30,11 @@ spec:
             medium: Memory
       containers:
         - name: server
-          image: docker-registry-default.172.16.5.95.nip.io/openshift/zookeeper:v10
+          image: ''
+          imagePullPolicy: IfNotPresent
           env:
             - name: MYID
-              value: "1"
+              value: "2"
             - name: JVMFLAGS
               value: "-Xmx2G"
           ports:

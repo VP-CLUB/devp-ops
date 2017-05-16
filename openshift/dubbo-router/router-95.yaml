@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: router-daemonset
+spec:
+  selector:
+      matchLabels:
+        name: router-daemonset 
+  template:
+    metadata:
+      labels:
+        name: router-daemonset
+    spec:
+      nodeSelector: 
+        zone: south-cn-a
+      containers:
+      - image: vpclub/router:1.0.0
+        imagePullPolicy: Always
+        name: router-daemonset
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+      serviceAccount: default
+      terminationGracePeriodSeconds: 10

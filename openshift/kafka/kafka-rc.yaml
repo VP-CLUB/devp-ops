@@ -7,6 +7,18 @@ metadata:
   name: kafka-broker
 spec:
   replicas: 1
+  triggers:
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+        - kafka
+        from:
+          kind: ImageStreamTag
+          name: "oc-kafka:latest"
+          namespace: openshift
+        lastTriggeredImage: ""
+      type: ImageChange
+    - type: ConfigChange
   template:
     metadata:
       labels:
@@ -15,7 +27,8 @@ spec:
     spec:
       containers:
       - name: kafka
-        image: docker-registry-default.172.16.5.80.nip.io/openshift/oc-kafka:latest
+        image: ' '
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9092
         env:
@@ -38,4 +51,4 @@ spec:
 #          - name: KAFKA_CREATE_TOPICS
 #            value: topic1:16:1
       securityContext:
-        runAsUser: 1001
+        runAsUser: 0

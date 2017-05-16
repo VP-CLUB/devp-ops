@@ -18,7 +18,7 @@ spec:
             medium: Memory
       containers:
         - name: server
-          image: quay.io/rainchasers/zookeeper:v10
+          image: docker-registry-default.172.16.5.95.nip.io/openshift/zookeeper:v10
           env:
             - name: MYID
               value: "2"

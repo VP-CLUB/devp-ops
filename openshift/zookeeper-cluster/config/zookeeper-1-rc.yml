@@ -4,6 +4,18 @@ metadata:
   name: zookeeper-1
 spec:
   replicas: 1
+  triggers:
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+        - server-1
+        from:
+          kind: ImageStreamTag
+          name: "zookeeper:v10"
+          namespace: openshift
+        lastTriggeredImage: ""
+      type: ImageChange
+    - type: ConfigChange
   template:
     metadata:
       labels:
@@ -18,7 +30,8 @@ spec:
             medium: Memory
       containers:
         - name: server
-          image: docker-registry-default.172.16.5.95.nip.io/openshift/zookeeper:v10
+          image: ''
+          imagePullPolicy: IfNotPresent
           env:
             - name: MYID
               value: "1"

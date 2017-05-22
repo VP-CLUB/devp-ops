@@ -21,3 +21,11 @@ oadm policy add-role-to-user admin zhonghang hazelcast-cluster
 oadm policy add-role-to-user admin huangjun hazelcast-cluster
 oadm policy add-role-to-user admin wanjiawei hazelcast-cluster
 oadm policy add-role-to-user admin wangxiaohu -n moses-stage
+
+oadm policy add-role-to-user admin fangbo -n kafka
+
+
+#新项目授权cicd权限
+oc policy add-role-to-user edit system:serviceaccount:cicd:jenkins -n your-project
+
+oc policy add-role-to-user edit system:serviceaccount:cicd:default -n your-project

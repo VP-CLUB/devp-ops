@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.hazelcast.discovery</groupId>
+    <artifactId>discovery</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <hazelcast.version>3.7.1</hazelcast.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.hazelcast</groupId>
+            <artifactId>hazelcast-all</artifactId>
+            <version>${hazelcast.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.noctarius.discovery</groupId>
+            <artifactId>hazelcast-kubernetes-discovery</artifactId>
+            <version>0.9.3-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.20.0</version>
+                <configuration>
+                    <images>
+                        <image>
+                            <name>vpclub/hazelcast-openshift</name>
+                            <build>
+                                <from>jeanblanchard/java:jdk-8</from>
+                                <maintainer>chris@hazelcast.com</maintainer>
+                                <ports>
+                                    <port>5701</port>
+                                </ports>
+                                <tags>
+                                    <tag>${hazelcast.version}</tag>
+                                </tags>
+                                <cmd>java -Djava.net.preferIPv4Stack=true -classpath "/opt/hazelcast/lib/*" Discovery</cmd>
+                                <assembly>
+                                    <basedir>/opt/hazelcast</basedir>
+                                    <inline>
+                                        <dependencySets>
+                                            <dependencySet>
+                                                <outputDirectory>lib</outputDirectory>
+                                                <useProjectAttachments>true</useProjectAttachments>
+                                            </dependencySet>
+                                        </dependencySets>
+                                    </inline>
+                                </assembly>
+                            </build>
+                        </image>
+                    </images>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                        <phase>package</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

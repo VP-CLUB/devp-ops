@@ -1,0 +1,22 @@
+{
+  "kind": "PersistentVolume",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "glusterfs-1fcb8480",
+    "creationTimestamp": null
+  },
+  "spec": {
+    "capacity": {
+      "storage": "2Gi"
+    },
+    "glusterfs": {
+      "endpoints": "heketi-storage-endpoints",
+      "path": "vol_1fcb8480a835e4cb186789ee30a576ac"
+    },
+    "accessModes": [
+      "ReadWriteMany"
+    ],
+    "persistentVolumeReclaimPolicy": "Retain"
+  },
+  "status": {}
+}

@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: DeploymentConfig
+metadata:
+  name: hazelcast-deployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: hazelcast
+    spec:
+      containers:
+      - name: hazelcast
+        image: openshift/hazelcast
+---
+apiVersion: v1
+kind: DeploymentConfig
+metadata:
+  name: management-center
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: management-center
+    spec:
+      containers:
+      - name: hazelcast
+        image: hazelcast/management-center
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: management
+spec:
+  selector:
+    app: management-center
+  ports:
+  - port: 80
+    targetPort: 8080
+    protocol: TCP

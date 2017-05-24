@@ -35,7 +35,7 @@
 				},
 				"spec": {
 					"containers": [{
-						"image": "vpclub/hazelcast-openshift:3.7.4-2",
+						"image": "vpclub/hazelcast-openshift:3.7.1",
 						"name": "hazelcast-openshift",
 						"env": [{
 							"name": "HAZELCAST_KUBERNETES_SERVICE_DNS",
@@ -52,7 +52,12 @@
 						}, {
 							"name": "HAZELCAST_TYPE",
 							"value": "${HAZELCAST_TYPE}"
-						}],
+						}
+						, {
+							"name": "MANAGEMENT_ACTIVE",
+							"value": "${MANAGEMENT_ACTIVE}"
+						}
+						],
 						"ports": [{
 							"containerPort": 5701,
 							"protocol": "TCP"
@@ -104,6 +109,12 @@
 		"name": "HAZELCAST_TYPE",
 		"description": "Defines the HazelcastInstance type: client/member",
 		"value": "client",
+		"required": true
+	}
+	, {
+		"name": "MANAGEMENT_ACTIVE",
+		"description": "Defines the HazelcastInstance management/mancenter: http://management/mancenter",
+		"value": "http://management/mancenter",
 		"required": true
 	}]
 }

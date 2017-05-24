@@ -10,10 +10,11 @@
 
     <properties>
         <hazelcast.version>3.7.1</hazelcast.version>
+        <discovery.version>0.9.3-SNAPSHOT</discovery.version>
     </properties>
     <dependencies>
         <dependency>
-            <groupId>com.hazelcast</groupId>
+            <groupId>com.hazelcast</groupId>s
             <artifactId>hazelcast-all</artifactId>
             <version>${hazelcast.version}</version>
         </dependency>
@@ -21,7 +22,7 @@
         <dependency>
             <groupId>com.noctarius.discovery</groupId>
             <artifactId>hazelcast-kubernetes-discovery</artifactId>
-            <version>0.9.3-SNAPSHOT</version>
+            <version>${discovery.version}</version>
         </dependency>
     </dependencies>
 

@@ -1,0 +1,23 @@
+svp-user-consumer:
+  image: java:8
+  working_dir: /app
+  net: host
+  container_name: vp-user-consumer
+  volumes:
+    - ./app:/app
+
+  command: java -Xmx256m -Xss256k -jar /app/vp-user-consumer-1.0.0.jar --spring.profiles.active=prod
+
+  ports:
+    - 9130:9130
+    - 21180:21180
+    - 31180:31180
+
+#  environment:
+#    HOSTNAME: vpclub
+#
+#  extra_hosts:
+#    vpclub: 172.16.5.23
+#  log_driver: syslog
+#  log_opt:
+#      syslog-address: "tcp://10.46.125.189:5000"

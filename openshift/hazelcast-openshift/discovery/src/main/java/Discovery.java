@@ -9,7 +9,7 @@ import com.hazelcast.util.StringUtil;
 public class Discovery {
     public static void main(String[] args) {
         String type = System.getenv("HAZELCAST_TYPE");
-        DiscoveryStrategyConfig strategyConfig = new DiscoveryStrategyConfig("com.noctarius.hazelcast.kubernetes.HazelcastKubernetesDiscoveryStrategy");
+        DiscoveryStrategyConfig strategyConfig = new DiscoveryStrategyConfig("cn.vpclub.hazelcast.kubernetes.HazelcastKubernetesDiscoveryStrategy");
         strategyConfig.addProperty("service-name", "hazelcast-openshift");
         strategyConfig.addProperty("namespace", "default");
         if ("client".equals(type)) {

@@ -1,4 +1,4 @@
-oc apply -f role.yaml　-n dubbo-router
+oc apply -f role.yaml　-n ip-router
 
 #oadm policy add-role-to-user daemonset-admin chenwei
 

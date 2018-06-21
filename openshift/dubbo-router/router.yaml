@@ -12,7 +12,7 @@ spec:
         name: router-daemonset
     spec:
       nodeSelector: 
-        zone: south-cn-a
+        region: infraNode
       containers:
       - image: vpclub/router:1.0.0
         imagePullPolicy: Always

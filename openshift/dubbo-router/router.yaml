@@ -4,8 +4,8 @@ metadata:
   name: router-daemonset
 spec:
   selector:
-      matchLabels:
-        name: router-daemonset 
+    matchLabels:
+      name: router-daemonset 
   template:
     metadata:
       labels:
@@ -13,6 +13,8 @@ spec:
     spec:
       nodeSelector: 
         region: infraNode
+      securityContext:
+        runAsUser: 0
       containers:
       - image: vpclub/router:1.0.0
         imagePullPolicy: Always

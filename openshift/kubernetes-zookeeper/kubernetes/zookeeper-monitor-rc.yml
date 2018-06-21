@@ -9,6 +9,8 @@ spec:
       labels:
         app: monitor-zookeeper
     spec:
+      securityContext:
+        runAsUser: 0
       containers:
         - name: server
           image: waj615/zookeeper:3.4.8

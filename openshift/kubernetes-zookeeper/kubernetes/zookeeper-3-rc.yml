@@ -10,6 +10,8 @@ spec:
         app: zookeeper
         server-id: "3"
     spec:
+      securityContext:
+        runAsUser: 0
       volumes:
         - name: data
           emptyDir: {}

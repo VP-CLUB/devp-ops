@@ -10,6 +10,8 @@ spec:
         app: zookeeper
         server-id: "1"
     spec:
+      securityContext:
+        runAsUser: 0
       volumes:
         - name: data
           emptyDir: {}
@@ -33,3 +35,4 @@ spec:
               name: data
             - mountPath: /opt/zookeeper/wal
               name: wal
+          
